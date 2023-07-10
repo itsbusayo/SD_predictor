@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Machine Learning Predictor</title>
+</head>
+<body>
+	<h1>Machine Learning Predictor</h1>
+	<form action="/predict" method="POST">
+		<!-- Numeric fields -->
+		<label for="age">Age:</label><br>
+		<input type="text" id="age" name="age"><br>
+		<label for="annual_balance">Annual Balance:</label><br>
+		<input type="text" id="annual_balance" name="annual_balance"><br>
+		<label for="day">Day:</label><br>
+		<input type="text" id="day" name="day"><br>
+		<label for="duration">Duration:</label><br>
+		<input type="text" id="duration" name="duration"><br>
+		<label for="present_campaign">Present Campaign:</label><br>
+		<input type="text" id="present_campaign" name="present_campaign"><br>
+		<label for="pdays">PDays:</label><br>
+		<input type="text" id="pdays" name="pdays"><br>
+		<label for="previous_campaign">Previous Campaign:</label><br>
+		<input type="text" id="previous_campaign" name="previous_campaign"><br>
+
+		<!-- Categorical fields -->
+		<label for="job">Job:</label><br>
+		<select id="job" name="job">
+			<option value="management">Management</option>
+			<option value="technician">Technician</option>
+			<option value="entrepreneur">Entrepreneur</option>
+			<option value="blue-collar">Blue-Collar</option>
+			<option value="unknown">Unknown</option>
+			<option value="retired">Retired</option>
+			<option value="admin.">Admin</option>
+			<option value="services">Services</option>
+			<option value="self-employed">Self-Employed</option>
+			<option value="unemployed">Unemployed</option>
+			<option value="housemaid">Housemaid</option>
+			<option value="student">Student</option>
+		</select><br>
+
+		<label for="marital_status">Marital Status:</label><br>
+		<select id="marital_status" name="marital_status">
+			<option value="married">Married</option>
+			<option value="single">Single</option>
+			<option value="divorced">Divorced</option>
+		</select><br>
+
+		<label for="educational_level">Educational Level:</label><br>
+		<select id="educational_level" name="educational_level">
+			<option value="tertiary">Tertiary</option>
+			<option value="secondary">Secondary</option>
+			<option value="unknown">Unknown</option>
+			<option value="primary">Primary</option>
+		</select><br>
+
+		<label for="credit_default">Credit Default:</label><br>
+		<select id="credit_default" name="credit_default">
+			<option value="no">No</option>
+			<option value="yes">Yes</option>
+		</select><br>
+
+		<label for="housing_loan">Housing Loan:</label><br>
+		<select id="housing_loan" name="housing_loan">
+			<option value="yes">Yes</option>
+			<option value="no">No</option>
+		</select><br>
+
+		<label for="personal_loan">Personal Loan:</label><br>
+		<select id="personal_loan" name="personal_loan">
+			<option value="yes">Yes</option>
+			<option value="no">No</option>
+		</select><br>
+
+		<label for="contact">Contact:</label><br>
+		<select id="contact" name="contact">
+			<option value="unknown">Unknown</option>
+			<option value="cellular">Cellular</option>
+			<option value="telephone">Telephone</option>
+		</select><br>
+
+		<label for="month">Month:</label><br>
+		<select id="month" name="month">
+			<option value="jan">January</option>
+			<option value="feb">February</option>
+			<option value="mar">March</option>
+			<option value="apr">April</option>
+			<option value="may">May</option>
+			<option value="jun">June</option>
+			<option value="jul">July</option>
+			<option value="aug">August</option>
+			<option value="sep">September</option>
+			<option value="oct">October</option>
+			<option value="nov">November</option>
+			<option value="dec">December</option>
+		</select><br>
+
+		<label for="marketing_outcome">Marketing Outcome:</label><br>
+		<select id="marketing_outcome" name="marketing_outcome">
+			<option value="unknown">Unknown</option>
+			<option value="failure">Failure</option>
+			<option value="other">Other</option>
+			<option value="success">Success</option>
+		</select><br>
+
+		<input type="submit" value="Predict">
+	</form>
+	{% if prediction_text %}
+		<h3>{{ prediction_text }}</h3>
+	{% endif %}
+</body>
+</html>
+
